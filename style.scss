@@ -1,0 +1,277 @@
+
+%paddings {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@mixin text-style($size:6rem, $family:(helvetica, serif), $weight:bold, $align:center, $color:khaki, $lineheight:normal, $letterspacing:normal){
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+  text-align: $align;
+  color: $color;
+  line-height: $lineheight;
+  letter-spacing: $letterspacing;
+}
+
+@mixin adaptive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint){
+
+    @if $breakpoint==large {
+      @media (min-width: map-get($breakpoints, $breakpoint)) and (max-width: 1199px){
+        @content;
+      }
+    }
+
+    @else if $breakpoint == medium {
+      @media (min-width: map-get($breakpoints, $breakpoint)) and (max-width:991px){
+        @content;
+      }
+    }
+
+    @else if $breakpoint == small {
+      @media (min-width: map-get($breakpoints, $breakpoint)) and (max-width: 767px ){
+        @content;
+      }
+    }
+
+    @else if $breakpoint == extrasmall {
+      @media (max-width: map-get($breakpoints, $breakpoint)-1) {
+        @content;
+      }
+    }
+
+    @else if $breakpoint == extrasmalluser1 {
+      @media (min-width: map-get($breakpoints, $breakpoint)) and (max-width:464px){
+        @content;
+      }
+    }
+
+    @else if $breakpoint == extrasmalluser2 {
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+
+    @else {
+      @warn ("Error, enter your breakpoint in map");
+    }
+
+  }
+
+}
+
+$background: (
+brushes: mediumspringgreen,
+frames: lightcoral,
+paint: skyblue
+);
+
+$breakpoints: (
+large: 992px,
+medium: 768px,
+small: 576px,
+extrasmall: 576px,
+extrasmalluser1: 311px,
+extrasmalluser2: 311px
+);
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @include adaptive(extrasmall){
+    font-size: 14px;
+  }
+}
+
+header {
+  background: url('resources/pattern.jpeg') no-repeat center;
+  background-size: cover;
+  @include adaptive(extrasmall){
+    min-width: 310px;
+  }
+
+  h4{
+    @extend %paddings;
+    @include text-style();
+    @include adaptive(large){
+      font-size: 4.9rem;
+    };
+    @include adaptive(medium){
+      font-size: 3.7rem;
+    }
+    @include adaptive(small){
+      font-size: 2.7rem;
+    }
+    @include adaptive(extrasmall){
+      font-size: 2.5rem;
+    }
+    @include adaptive(extrasmalluser1){
+      font-size: 7.15vw;
+    }
+    @include adaptive(extrasmalluser2){
+      font-size: 1.6rem;
+    }
+  }
+}
+
+main {
+  @include adaptive(extrasmall){
+    min-width: 310px;
+  }
+}
+
+.container {
+  @extend %paddings;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.col {
+  width: 100%;
+  position: relative;
+  @extend %paddings;
+  flex: 1 0 0%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.card {
+  border-radius: 0.625rem;
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(0,0,0,0.2);
+}
+
+.col-header {
+  @extend %paddings;
+  @include text-style(2rem, (helvetica,serif), bold, left, white, 2.0rem);
+  @include adaptive(large){
+    font-size: 1.7rem;
+  }
+  @include adaptive(medium){
+    font-size: 1.7rem;
+  }
+  @include adaptive(small){
+    font-size: 1.5rem;
+  }
+  @include adaptive(extrasmall){
+    font-size: 1.6rem;
+  }
+  @include adaptive(extrasmalluser1){
+    font-size: 5.4vw;
+  }
+  @include adaptive(extrasmalluser2){
+    font-size: 1.3rem;
+  }
+}
+
+/*background headers in card*/
+@each $item, $variable in $background {
+  .#{$item} {
+    background-color: $variable;
+  }
+}
+
+.col-body {
+  @extend %paddings;
+  margin-top: 0.5rem;
+
+  img {
+    margin-bottom: 0.5rem;
+    @include adaptive(extrasmalluser2){
+      width:100%;
+      height: auto;
+      position: relative;
+    }
+  }
+
+  h4 {
+    @include text-style(1rem, (helvetica, serif), normal, left, black, 1.5rem, 0.015rem );
+    @include adaptive(large){
+      font-size: 0.94rem;
+    }
+    @include adaptive(medium){
+      font-size: 0.94rem;
+    }
+    @include adaptive(small){
+      font-size: 0.91rem;
+    }
+    @include adaptive(extrasmall){
+      font-size: 1rem;
+    }
+    @include  adaptive(extrasmalluser1){
+      font-size: 0.9rem;
+    }
+    @include adaptive(extrasmalluser2){
+      font-size: 0.9rem;
+    }
+  }
+
+  p {
+    @include text-style(1rem, (helvetica, serif), normal, left, black, 1.5rem, 0.015rem );
+    @include adaptive(large){
+      font-size: 0.94rem;
+    }
+    @include adaptive(medium){
+      font-size: 0.94rem;
+    }
+    @include adaptive(small){
+      font-size: 0.91rem;
+    }
+    @include adaptive(extrasmall){
+      font-size: 1rem;
+    }
+    @include  adaptive(extrasmalluser1){
+      font-size: 0.9rem;
+    }
+    @include adaptive(extrasmalluser2){
+      font-size: 0.9rem;
+    }
+    span {
+      @include text-style (inherit, (helvetica, serif), bold, inherit, blue, inherit, inherit);
+    }
+  }
+}
+
+footer {
+  margin-top: 0.5rem;
+  height: 3.125rem;
+  position: relative;
+  @include adaptive(extrasmall){
+    min-width: 310px;
+  }
+  p{
+    @include text-style(1rem, (helvetica, serif), normal, center, black);
+    @include adaptive(large){
+      font-size: 0.94rem;
+    }
+    @include adaptive(medium){
+      font-size: 0.94rem;
+    }
+    @include adaptive(small){
+      font-size: 0.91rem;
+    }
+    @include adaptive(extrasmall){
+      font-size: 1rem;
+    }
+    @include  adaptive(extrasmalluser1){
+      font-size: 0.9rem;
+    }
+    @include adaptive(extrasmalluser2){
+      font-size: 0.9rem;
+    }
+  }
+}

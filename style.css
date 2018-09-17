@@ -1,0 +1,214 @@
+header h4, .container, .col, .col-header, .col-body {
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+@media (max-width: 575px) {
+  html {
+    font-size: 14px; } }
+
+header {
+  background: url("resources/pattern.jpeg") no-repeat center;
+  background-size: cover; }
+  @media (max-width: 575px) {
+    header {
+      min-width: 310px; } }
+  header h4 {
+    font-size: 6rem;
+    font-family: helvetica, serif;
+    font-weight: bold;
+    text-align: center;
+    color: khaki;
+    line-height: normal;
+    letter-spacing: normal; }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      header h4 {
+        font-size: 4.9rem; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      header h4 {
+        font-size: 3.7rem; } }
+    @media (min-width: 576px) and (max-width: 767px) {
+      header h4 {
+        font-size: 2.7rem; } }
+    @media (max-width: 575px) {
+      header h4 {
+        font-size: 2.5rem; } }
+    @media (min-width: 311px) and (max-width: 464px) {
+      header h4 {
+        font-size: 7.15vw; } }
+    @media (max-width: 311px) {
+      header h4 {
+        font-size: 1.6rem; } }
+
+@media (max-width: 575px) {
+  main {
+    min-width: 310px; } }
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.row {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  display: flex;
+  flex-flow: column wrap; }
+
+.col {
+  width: 100%;
+  position: relative;
+  flex: 1 0 0%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px; }
+
+.card {
+  border-radius: 0.625rem;
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2); }
+
+.col-header {
+  font-size: 2rem;
+  font-family: helvetica, serif;
+  font-weight: bold;
+  text-align: left;
+  color: white;
+  line-height: 2rem;
+  letter-spacing: normal; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .col-header {
+      font-size: 1.7rem; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .col-header {
+      font-size: 1.7rem; } }
+  @media (min-width: 576px) and (max-width: 767px) {
+    .col-header {
+      font-size: 1.5rem; } }
+  @media (max-width: 575px) {
+    .col-header {
+      font-size: 1.6rem; } }
+  @media (min-width: 311px) and (max-width: 464px) {
+    .col-header {
+      font-size: 5.4vw; } }
+  @media (max-width: 311px) {
+    .col-header {
+      font-size: 1.3rem; } }
+
+/*background headers in card*/
+.brushes {
+  background-color: mediumspringgreen; }
+
+.frames {
+  background-color: lightcoral; }
+
+.paint {
+  background-color: skyblue; }
+
+.col-body {
+  margin-top: 0.5rem; }
+  .col-body img {
+    margin-bottom: 0.5rem; }
+    @media (max-width: 311px) {
+      .col-body img {
+        width: 100%;
+        height: auto;
+        position: relative; } }
+  .col-body h4 {
+    font-size: 1rem;
+    font-family: helvetica, serif;
+    font-weight: normal;
+    text-align: left;
+    color: black;
+    line-height: 1.5rem;
+    letter-spacing: 0.015rem; }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .col-body h4 {
+        font-size: 0.94rem; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .col-body h4 {
+        font-size: 0.94rem; } }
+    @media (min-width: 576px) and (max-width: 767px) {
+      .col-body h4 {
+        font-size: 0.91rem; } }
+    @media (max-width: 575px) {
+      .col-body h4 {
+        font-size: 1rem; } }
+    @media (min-width: 311px) and (max-width: 464px) {
+      .col-body h4 {
+        font-size: 0.9rem; } }
+    @media (max-width: 311px) {
+      .col-body h4 {
+        font-size: 0.9rem; } }
+  .col-body p {
+    font-size: 1rem;
+    font-family: helvetica, serif;
+    font-weight: normal;
+    text-align: left;
+    color: black;
+    line-height: 1.5rem;
+    letter-spacing: 0.015rem; }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .col-body p {
+        font-size: 0.94rem; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .col-body p {
+        font-size: 0.94rem; } }
+    @media (min-width: 576px) and (max-width: 767px) {
+      .col-body p {
+        font-size: 0.91rem; } }
+    @media (max-width: 575px) {
+      .col-body p {
+        font-size: 1rem; } }
+    @media (min-width: 311px) and (max-width: 464px) {
+      .col-body p {
+        font-size: 0.9rem; } }
+    @media (max-width: 311px) {
+      .col-body p {
+        font-size: 0.9rem; } }
+    .col-body p span {
+      font-size: inherit;
+      font-family: helvetica, serif;
+      font-weight: bold;
+      text-align: inherit;
+      color: blue;
+      line-height: inherit;
+      letter-spacing: inherit; }
+
+footer {
+  margin-top: 0.5rem;
+  height: 3.125rem;
+  position: relative; }
+  @media (max-width: 575px) {
+    footer {
+      min-width: 310px; } }
+  footer p {
+    font-size: 1rem;
+    font-family: helvetica, serif;
+    font-weight: normal;
+    text-align: center;
+    color: black;
+    line-height: normal;
+    letter-spacing: normal; }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      footer p {
+        font-size: 0.94rem; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      footer p {
+        font-size: 0.94rem; } }
+    @media (min-width: 576px) and (max-width: 767px) {
+      footer p {
+        font-size: 0.91rem; } }
+    @media (max-width: 575px) {
+      footer p {
+        font-size: 1rem; } }
+    @media (min-width: 311px) and (max-width: 464px) {
+      footer p {
+        font-size: 0.9rem; } }
+    @media (max-width: 311px) {
+      footer p {
+        font-size: 0.9rem; } }
